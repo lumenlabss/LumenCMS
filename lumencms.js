@@ -1,60 +1,41 @@
 const express = require("express");
 const path = require("path");
-const config = require("./config.json");
-const db = require("./src/database");
+const config = require("./src/config"); // Import configuration
+const loadRoutes = require("./src/routes"); // Import routes
+const {
+  morganMiddleware,
+  cookieMiddleware,
+  bodyMiddleware,
+  sessionMiddleware,
+} = require("./src/middlewares"); // Import middlewares
 
-// Middlewares
-const morganMiddleware = require("./src/middlewares/morgan");
-const cookieMiddleware = require("./src/middlewares/cookieParser");
-const bodyMiddleware = require("./src/middlewares/bodyParser");
-const sessionMiddleware = require("./src/middlewares/session");
+const app = express(); // Initialize the Express app
 
-// Initialize Express app
-const app = express();
-
-// Set up view engine
+// Set view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Apply middlewares
-app.use(morganMiddleware);
-app.use(cookieMiddleware);
-app.use(bodyMiddleware.urlencoded);
-app.use(bodyMiddleware.json);
-app.use(sessionMiddleware);
+// Inject config into views
+app.use((req, res, next) => {
+  res.locals.config = config;
+  next();
+});
 
-// Serve static files
+// Load routes
+app.use(loadRoutes); // Load all routes from `src/routes/index.js`
+
+// Middleware for static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Example route using SQLite database
-app.get("/users", (req, res) => {
-  db.all("SELECT * FROM users", [], (err, rows) => {
-    if (err) {
-      throw err;
-    }
-    res.render("users", { users: rows });
-  });
-});
-
-// Import routes
-const adminRoutes = require("./src/routes/admin");
-const userRoutes = require("./src/routes/user");
-
-// Homepage
-app.get("/", (req, res) => {
-  res.render("home/index");
-});
-
-// 404 handler
+// 404 error handling
 app.use((req, res, next) => {
   const error = new Error("Page not found");
   error.status = 404;
   next(error);
 });
 
-// Error management
+// Global error handling
 if (config.NODE_ENV === "development") {
-  // In development, displays error details
   app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.json({
@@ -63,14 +44,13 @@ if (config.NODE_ENV === "development") {
     });
   });
 } else {
-  // In production, detailed errors are not shown
   app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.send("Something went wrong!");
   });
 }
 
-// Start server
+// Start the server
 const PORT = config.PORT || 3000;
 app.listen(PORT, config.HOSTNAME, () => {
   console.log(

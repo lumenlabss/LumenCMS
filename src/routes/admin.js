@@ -8,7 +8,7 @@ router.get("/admin", (req, res) => {
   });
 });
 
-// Other admin routes here
+// other admin route
 // router.get("/admin/settings", (req, res) => { ... });
 
 module.exports = router;

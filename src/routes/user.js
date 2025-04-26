@@ -8,7 +8,7 @@ router.get("/user", (req, res) => {
   });
 });
 
-// Other user routes here
+// other user routes
 // router.get("/user/profile", (req, res) => { ... });
 
 module.exports = router;
