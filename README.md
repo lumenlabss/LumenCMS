@@ -88,7 +88,7 @@ Project completion: ~0%
 - [ ] Invoicing and payments
 - [ ] Ticketing system (support)
 - [ ] RESTful API
-- [ ] Module/plugin system
+- [ ] Module/plugin system (like blueprint for pterodactyl)
 - [ ] Logging and audit system
 
 ### Web Interface
@@ -106,10 +106,18 @@ Project completion: ~0%
 - [ ] Multi-language support (i18n)
 - [ ] Notifications system (emails, webhooks)
 
+### Modules & API Integrations
+
+- [ ] Pterodactyl integration (game servers provisioning)
+- [ ] Plesk integration (web hosting provisioning)
+- [ ] Proxmox integration (VPS provisioning)
+- [ ] OVH API (domain registration, VPS, dedicated servers)
+- [ ] Let's Encrypt integration (SSL certificates auto-setup)
+- [ ] Stripe & PayPal payment modules
+
 ### Bonus
 
 - [ ] Complete documentation (setup, API, modules)
-- [ ] Docker integration (for easy deployment)
 - [ ] Mobile responsive design
 - [ ] Webhooks for automation
 - [ ] Self-updating system (experimental)
