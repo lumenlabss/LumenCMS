@@ -1,0 +1,7 @@
+{
+  "SESSION_SECRET": "secret_key",
+  "NODE_ENV": "development",
+  "PORT": 3000,
+  "HOSTNAME": "localhost",
+  "NAME": "LumenCMS"
+}

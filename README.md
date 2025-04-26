@@ -3,10 +3,10 @@
 # LumenCMS Pre-Alpha
 
 | :exclamation: **LumenCMS is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 **LumenCMS** is a free and open-source alternative to WHMCS, designed to simplify customer, service, and billing management through a modern, intuitive, and lightweight interface.  
-Developed in **TypeScript**, LumenCMS aims to provide a performant, extensible, and developer-friendly solution.
+Developed in **NodeJS**, LumenCMS aims to provide a performant, extensible, and developer-friendly solution.
 
 ---
 
@@ -51,7 +51,6 @@ Developed in **TypeScript**, LumenCMS aims to provide a performant, extensible, 
 
 3. SOON:
 
-
 ---
 
 ## :page_facing_up: License
@@ -79,7 +78,7 @@ Project completion: ~0%
 
 ### Core
 
-- [ ] Project setup with TypeScript and Express
+- [ ] Project setup with NodeJS and Express
 - [ ] Authentication system (login, logout, JWT)
 - [ ] Client management (CRUD)
 - [ ] Admin dashboard
