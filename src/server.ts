@@ -1,9 +1,7 @@
 import app from "./app";
 
-import config from "../config.json";
+const port = 3050; // ou tout autre port de ton choix
 
-const PORT = config.port || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Serveur démarré sur le port ${port}`);
 });

@@ -1,5 +1,5 @@
 {
   "port": 3000,
-  "siteName": "LumenOne",
+  "siteName": "LumenCMS",
   "databasePath": "./data/database.db"
 }
