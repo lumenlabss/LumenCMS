@@ -1,87 +1,130 @@
-# LumenCMS
+![SOON](SOON)
 
-LumenCMS est un système de gestion client et de facturation open-source écrit en TypeScript.  
-Inspiré par WHMCS, notre but est de proposer une alternative moderne, performante et plus accessible pour les hébergeurs et prestataires de services.
+# LumenCMS Pre-Alpha
 
----
+| :exclamation: **LumenCMS is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-## ✨ Caractéristiques prévues
-
-- Gestion des clients (inscription, espace client, profils)
-- Gestion des commandes (produits, services)
-- Facturation automatique et manuelle
-- Système de ticket/support intégré
-- Automatisation des services (provisionnement, suspension, résiliation)
-- Intégration des passerelles de paiement
-- Dashboard d'administration complet
-- Modules et hooks pour personnalisation
-- API RESTful
+**LumenCMS** is a free and open-source alternative to WHMCS, designed to simplify customer, service, and billing management through a modern, intuitive, and lightweight interface.  
+Developed in **TypeScript**, LumenCMS aims to provide a performant, extensible, and developer-friendly solution.
 
 ---
 
-## 🚀 Installation
+## :sparkles: Key Features (under development)
 
-1. Clonez ce dépôt :
+- :busts_in_silhouette: **Client management** (registration, login, profile, billing)
+- :credit_card: **Automatic and manual billing**
+- :money_with_wings: **Online payment integration** (Stripe, PayPal)
+- :page_with_curl: **Invoice and quote generation**
+- :wrench: **Service provisioning automation** (via API or scripts)
+- :envelope_with_arrow: **Ticketing & support system**
+- :gear: **Admin dashboard and customer management**
+- :arrows_counterclockwise: **REST API** for external integrations
+- :jigsaw: **Module/plugin system** for customization
+- :lock: **Secure authentication**
+
+---
+
+## :rocket: Installation
+
+### Prerequisites
+
+- **Node.js** (version 18 or higher)
+- **npm** or **yarn**
+- **SQLite database** (default)
+- Linux or Windows (recommended: Linux)
+
+### Installation Steps
+
+1. Clone the repository:
+
    ```bash
-   git clone https://github.com/votre-utilisateur/LumenCMS.git
+   git clone https://github.com/RubixLTS/RubixOne.git
+   cd RubixOne
    ```
-2. Installez les dépendances :
+
+2. Install dependencies:
+
    ```bash
-   cd LumenCMS
    npm install
    ```
-3. Lancez le serveur en mode développement :
-   ```bash
-   npm run dev
-   ```
+
+3. SOON:
+
 
 ---
 
-## 📋 ToDo List
+## :page_facing_up: License
 
-- [x] Initialisation du projet avec TypeScript + Express
-- [ ] Mise en place de l'authentification JWT
-- [ ] Base de données client (création/suppression/mise à jour)
-- [ ] Gestion des produits et services
-- [ ] Système de facturation (création de factures)
-- [ ] Paiement en ligne (Stripe, PayPal, etc.)
-- [ ] Système de support/ticket
-- [ ] Dashboard admin (statistiques, gestion globale)
-- [ ] API publique/documentée
-- [ ] Modules/Plugins (support pour extensions)
-- [ ] Tests unitaires et d'intégration
-- [ ] Documentation complète utilisateur/développeur
-- [ ] Déploiement Dockerisé
+LumenCMS is distributed under the **MIT** license.  
+You are free to use, modify, and distribute it.
 
 ---
 
-## 📦 Technologies utilisées
+## :handshake: Contributing
 
-- Node.js
-- TypeScript
-- Express.js
-- Prisma (ORM)
-- PostgreSQL (base de données par défaut)
-- React (futur front-end)
+Contributions are welcome! Here's how you can contribute:
 
----
-
-## 💬 Contribuer
-
-Les contributions sont les bienvenues !  
-Merci de respecter le guide de contribution qui sera bientôt disponible.
+1. Fork the project
+2. Create a branch (`git checkout -b feature/your-feature-name`)
+3. Commit your changes (`git commit -am 'Add a new feature'`)
+4. Push to the branch (`git push origin feature/your-feature-name`)
+5. Open a Pull Request
 
 ---
 
-## 📄 Licence
+## :white_check_mark: ToDo List
 
-LumenCMS est sous licence MIT.
+Project completion: ~5%
+
+### Core
+
+- [ ] Project setup with TypeScript and Express
+- [ ] Authentication system (login, logout, JWT)
+- [ ] Client management (CRUD)
+- [ ] Admin dashboard
+- [ ] Product and service management
+- [ ] Service ordering system
+- [ ] Invoicing and payments
+- [ ] Ticketing system (support)
+- [ ] RESTful API
+- [ ] Module/plugin system
+- [ ] Logging and audit system
+
+### Web Interface
+
+- [ ] Basic user dashboard
+- [ ] Order form (products and services)
+- [ ] Invoice view and payment tracking
+- [ ] Ticket management (submit, reply, close)
+- [ ] Admin panel (clients, invoices, services, tickets)
+
+### Backend
+
+- [ ] Full API for client and admin operations
+- [ ] Security enhancements (rate limiting, CSRF, input validation)
+- [ ] Multi-language support (i18n)
+- [ ] Notifications system (emails, webhooks)
+
+### Bonus
+
+- [ ] Complete documentation (setup, API, modules)
+- [ ] Docker integration (for easy deployment)
+- [ ] Mobile responsive design
+- [ ] Webhooks for automation
+- [ ] Self-updating system (experimental)
 
 ---
 
-Veux-tu que je te prépare aussi directement :
+## :speech_balloon: Community
 
-- Un `CONTRIBUTING.md` pour expliquer comment contribuer ?
-- Un exemple de `docker-compose.yml` pour préparer l'environnement ?
+Join the LumenCMS community to ask questions, report bugs, or propose ideas:
 
-👀 Dis-moi ce que tu veux ajouter !
+- [GitHub Issues](https://github.com/your-username/LumenCMS/issues)
+- [Discord](https://discord.gg/ty92ffCYUC)
+
+---
+
+## :tada: Acknowledgments
+
+Thanks to all contributors and early adopters who support the LumenCMS project!
