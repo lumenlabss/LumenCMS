@@ -1,34 +1,22 @@
-// src/services/userService.ts
-
 import db from "../database/database";
-import { User } from "../types/user";
+import { User, UserRow } from "../types/user";
 
-// Define the type for the row result
-interface UserRow {
-  id: number;
-  username: string;
-  email: string;
-  password: string;
-  role?: string; // Role is optional in case it's not set
-}
-
-// Function to get a user by email from the database
+// Fonction pour obtenir un utilisateur par email
 export const getUserByEmail = (email: string): User | null => {
-  const row: UserRow | undefined = db
-    .prepare("SELECT * FROM users WHERE email = ?")
-    .get(email);
+  const row = db.prepare("SELECT * FROM users WHERE email = ?").get(email) as
+    | UserRow
+    | undefined; // Cast explicite
 
   if (!row) {
-    return null; // No user found
+    return null; // Aucun utilisateur trouvé
   }
 
-  // Return the user object
   const user: User = {
     id: row.id,
     username: row.username,
     email: row.email,
     password: row.password,
-    role: row.role || "user", // Default role can be set here
+    role: row.role || "user", // Rôle par défaut "user" si non défini
   };
 
   return user;

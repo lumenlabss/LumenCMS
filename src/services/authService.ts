@@ -2,25 +2,25 @@
 
 import bcrypt from "bcryptjs";
 import db from "../database/database";
-import { User } from "../types/user";
+import { UserRow } from "../types/user";
 
-// Function to validate user credentials (check email & password)
+// Fonction pour valider les identifiants de l'utilisateur
 export const validateUserCredentials = async (
   email: string,
   password: string
 ): Promise<boolean> => {
-  // Fetch the user by email from the database
-  const user: User | undefined = db
-    .prepare("SELECT * FROM users WHERE email = ?")
-    .get(email);
+  // Récupère l'utilisateur depuis la base de données et force le type
+  const user = db.prepare("SELECT * FROM users WHERE email = ?").get(email) as
+    | UserRow
+    | undefined; // Cast explicite
 
   if (!user) {
-    return false; // No user found
+    return false; // Aucun utilisateur trouvé
   }
 
-  // Compare plain password with hashed password
-  const isMatch = await bcrypt.compare(password, user.password); // Assure that user.password exists
-  return isMatch; // Return true if passwords match
+  // Compare le mot de passe en clair avec le mot de passe haché
+  const isMatch = await bcrypt.compare(password, user.password);
+  return isMatch;
 };
 
 // Function to create a new user with hashed password
