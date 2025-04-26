@@ -1,15 +1,15 @@
 const express = require("express");
 const path = require("path");
-const config = require("./src/config"); // Import configuration
-const loadRoutes = require("./src/routes"); // Import routes
+const config = require("./src/config");
+const loadRoutes = require("./src/routes");
+const morganMiddleware = require("./src/middlewares/morgan"); // Import custom morgan middleware
 const {
-  morganMiddleware,
   cookieMiddleware,
   bodyMiddleware,
   sessionMiddleware,
-} = require("./src/middlewares"); // Import middlewares
+} = require("./src/middlewares"); // Import other middlewares
 
-const app = express(); // Initialize the Express app
+const app = express();
 
 // Set view engine
 app.set("view engine", "ejs");
@@ -21,8 +21,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Use morgan middleware for logging
+app.use(morganMiddleware); // This will conditionally log requests based on your NODE_ENV
+
 // Load routes
-app.use(loadRoutes); // Load all routes from `src/routes/index.js`
+app.use(loadRoutes); // Load other routes
 
 // Middleware for static files
 app.use(express.static(path.join(__dirname, "public")));
