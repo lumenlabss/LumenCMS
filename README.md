@@ -1,8 +1,8 @@
 ![SOON](SOON)
 
-# LumenCMS Pre-Alpha [Currently on hiatus, we want to release the LumenOne beta before starting LumenCMS]
+# LumenCMS
 
-| :exclamation: **LumenCMS is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
+| :exclamation: Currently on hiatus, we want to release the LumenOne beta before starting LumenCMS  |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 **LumenCMS** is a free and open-source alternative to WHMCS, designed to simplify customer, service, and billing management through a modern, intuitive, and lightweight interface.  
