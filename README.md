@@ -1,6 +1,6 @@
 ![SOON](SOON)
 
-# LumenCMS Pre-Alpha
+# LumenCMS Pre-Alpha [Currently on hiatus, we want to release the LumenOne beta before starting LumenCMS]
 
 | :exclamation: **LumenCMS is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
