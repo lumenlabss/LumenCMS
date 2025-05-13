@@ -19,7 +19,7 @@
 - 📨 **Support ticket system**
 - 📬 **Customizable e-mail notifications**
 - :jigsaw: **System of modules/extensions** for customization
-  :arrows_counterclockwise: **REST API** for integration and automation
+- :arrows_counterclockwise: **REST API** for integration and automation
 - 🧩 **Integration with Pterodactyl, Proxmox, etc.** _(via modules)_
 
 | ⚠️ LumenOne currently doesn't encrypt user passwords. This will be fixed in Alpha 1.0.0 or Bêta 1.0.0, but for now, just don't leak your "lumencms.db". |
@@ -88,7 +88,7 @@ Contributions are welcome! Here's how you can contribute:
 
 Project completion : ⁓ 0%
 
-## No need 😎 (maybe I do but lazy lol)
+## No need todolist 😎 (maybe I do but lazy lol)
 
 ---
 
