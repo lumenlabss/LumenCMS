@@ -7,15 +7,16 @@
  */
 
 const express = require("express");
+const expressSession = require("express-session");
 const config = require("./config/config.json");
 const ejs = require("ejs");
-const AuthLoginRouter = require("./src/routes/auth/login");
+const HomeRouter = require("./src/routes/home.js");
 
 // Application initialization
 const app = express();
 
 // Pages
-app.use("/", AuthLoginRouter);
+app.use("/", HomeRouter);
 
 // Start web server
 const port = config.port || 3000;
