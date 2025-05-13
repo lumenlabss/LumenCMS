@@ -1,27 +1,29 @@
-![SOON](SOON)
+![image](https://github.com/user-attachments/assets/5222bd49-29c6-4346-8a37-296a2ecb6e8c)
 
-# LumenCMS
+# LumenOne Pre-Alpha
 
-| :exclamation: Currently on hiatus, we want to release the LumenOne beta before starting LumenCMS  |
+| :exclamation: **LumenOne is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-**LumenCMS** is a free and open-source alternative to WHMCS, designed to simplify customer, service, and billing management through a modern, intuitive, and lightweight interface.  
-Developed in **NodeJS**, LumenCMS aims to provide a performant, extensible, and developer-friendly solution.
+**LumenOne** is a free and open-source alternative to Plesk, designed to simplify web hosting management (websites, domains, databases, FTP, emails, etc.) through a modern, intuitive, and lightweight interface. Developed in **Node.js**, LumenOne aims to provide a performant and extensible solution for developers and system administrators.
 
 ---
 
-## :sparkles: Key Features (under development)
+## :sparkles: Key Features (some feature not available now)
 
-- :busts_in_silhouette: **Client management** (registration, login, profile, billing)
-- :credit_card: **Automatic and manual billing**
-- :money_with_wings: **Online payment integration** (Stripe, PayPal)
-- :page_with_curl: **Invoice and quote generation**
-- :wrench: **Service provisioning automation** (via API or scripts)
-- :envelope_with_arrow: **Ticketing & support system**
-- :gear: **Admin dashboard and customer management**
-- :arrows_counterclockwise: **REST API** for external integrations
-- :jigsaw: **Module/plugin system** for customization
-- :lock: **Secure authentication**
+- :control_knobs: **Simple, responsive, and modern web interface**
+- :globe_with_meridians: **Domain & subdomain management**
+- :file_folder: **File management** (via SFTP/WebFTP)
+- :dolphin: **Database management** (SQLite)
+- :outbox_tray: **FTP account management**
+- 📧 **Email management** (optional)
+- :whale: **Docker integration** (optional for service isolation)
+- :closed_lock_with_key: **Let's Encrypt SSL certificates**
+- :jigsaw: **Module/extension system** for customization
+- :arrows_counterclockwise: **REST API** for automation and integration
+
+| ⚠️ LumenOne currently doesn't encrypt user passwords. This will be fixed in Alpha 1.0.0 or Bêta 1.0.0, but for now, just don't leak your "lumenone.db". |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ---
 
@@ -33,14 +35,21 @@ Developed in **NodeJS**, LumenCMS aims to provide a performant, extensible, and 
 - **npm** or **yarn**
 - **SQLite database** (default)
 - Linux or Windows (recommended: Linux)
+- **Nginx**
 
 ### Installation Steps
+
+0. Go to :
+
+   ```bash
+   cd var/www/
+   ```
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/RubixLTS/RubixOne.git
-   cd RubixOne
+   git clone https://github.com/lumenlabss/LumenOne.git
+   cd LumenOne
    ```
 
 2. Install dependencies:
@@ -49,14 +58,53 @@ Developed in **NodeJS**, LumenCMS aims to provide a performant, extensible, and 
    npm install
    ```
 
-3. SOON:
+3. Configure the `config/config.json` file:
+
+   ```json
+   {
+     "hostname": "localhost",
+     "port": 3000,
+     "name": "LumenOne",
+     "version": "Pre-Alpha"
+   }
+   ```
+
+4. Start the server:
+
+   ```bash
+   node lumenone.js
+   ```
+
+5. Access the web interface:
+
+   ```
+   http://localhost:3000
+   ```
+
+6. Nginx Config:
+
+   ```
+   server {
+    listen 80;
+    server_name example.com;  # Replace with your domain
+
+    # Redirect all HTTP requests to your Node.js application
+        location / {
+        proxy_pass http://localhost:3000;  # Replace with the port on which your Node.js app is listening
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+   }
+   ```
 
 ---
 
 ## :page_facing_up: License
 
-LumenCMS is distributed under the **MIT** license.  
-You are free to use, modify, and distribute it.
+LumenOne is distributed under the **MIT** license. You are free to use, modify, and distribute it.
 
 ---
 
@@ -65,73 +113,30 @@ You are free to use, modify, and distribute it.
 Contributions are welcome! Here's how you can contribute:
 
 1. Fork the project
-2. Create a branch (`git checkout -b feature/your-feature-name`)
+2. Create a branch (`git checkout -b feature/feature-name`)
 3. Commit your changes (`git commit -am 'Add a new feature'`)
-4. Push to the branch (`git push origin feature/your-feature-name`)
+4. Push your changes (`git push origin feature/feature-name`)
 5. Open a Pull Request
 
 ---
 
 ## :white_check_mark: ToDo List
 
-Project completion: ~0%
+Project completion : ⁓ 0%
 
-### Core
-
-- [ ] Project setup with NodeJS and Express
-- [ ] Authentication system (login, logout, JWT)
-- [ ] Client management (CRUD)
-- [ ] Admin dashboard
-- [ ] Product and service management
-- [ ] Service ordering system
-- [ ] Invoicing and payments
-- [ ] Ticketing system (support)
-- [ ] RESTful API
-- [ ] Module/plugin system (like blueprint for pterodactyl)
-- [ ] Logging and audit system
-
-### Web Interface
-
-- [ ] Basic user dashboard
-- [ ] Order form (products and services)
-- [ ] Invoice view and payment tracking
-- [ ] Ticket management (submit, reply, close)
-- [ ] Admin panel (clients, invoices, services, tickets)
-
-### Backend
-
-- [ ] Full API for client and admin operations
-- [ ] Security enhancements (rate limiting, CSRF, input validation)
-- [ ] Multi-language support (i18n)
-- [ ] Notifications system (emails, webhooks)
-
-### Modules & API Integrations
-
-- [ ] Pterodactyl integration (game servers provisioning)
-- [ ] Plesk integration (web hosting provisioning)
-- [ ] Proxmox integration (VPS provisioning)
-- [ ] OVH API (domain registration, VPS, dedicated servers)
-- [ ] Let's Encrypt integration (SSL certificates auto-setup)
-- [ ] Stripe & PayPal payment modules
-
-### Bonus
-
-- [ ] Complete documentation (setup, API, modules)
-- [ ] Mobile responsive design
-- [ ] Webhooks for automation
-- [ ] Self-updating system (experimental)
+## No need 😎 (maybe I do but lazy lol)
 
 ---
 
 ## :speech_balloon: Community
 
-Join the LumenCMS community to ask questions, report bugs, or propose ideas:
+Join the LumenLabs community to ask questions, report bugs, or propose ideas:
 
-- [GitHub Issues](https://github.com/your-username/LumenCMS/issues)
+- [GitHub Issues](https://github.com/lumenlabss/LumenCMS/issues)
 - [Discord](https://discord.gg/ty92ffCYUC)
 
 ---
 
 ## :tada: Acknowledgments
 
-Thanks to all contributors and early adopters who support the LumenCMS project!
+Thanks to all contributors and users who support the LumenOne project!
