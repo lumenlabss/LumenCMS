@@ -1,28 +1,28 @@
-![image](https://github.com/user-attachments/assets/5222bd49-29c6-4346-8a37-296a2ecb6e8c)
+![image](SOON)
 
-# LumenOne Pre-Alpha
+# LumenCMS
 
-| :exclamation: **LumenOne is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
+| :exclamation: **LumenCMS is under development**: some features may be unstable or incomplete. Its use in a production environment is strongly discouraged at this time. |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-**LumenOne** is a free and open-source alternative to Plesk, designed to simplify web hosting management (websites, domains, databases, FTP, emails, etc.) through a modern, intuitive, and lightweight interface. Developed in **Node.js**, LumenOne aims to provide a performant and extensible solution for developers and system administrators.
+**LumenCMS** is a free, open-source alternative to WHMCS, designed to simplify hosting management (customers, services, billing, tickets, orders, etc.) through a modern, intuitive and lightweight interface. Developed in Node.js, LumenCMS aims to offer a high-performance, scalable solution for hosting providers and system administrators.
 
 ---
 
 ## :sparkles: Key Features (some feature not available now)
 
-- :control_knobs: **Simple, responsive, and modern web interface**
-- :globe_with_meridians: **Domain & subdomain management**
-- :file_folder: **File management** (via SFTP/WebFTP)
-- :dolphin: **Database management** (SQLite)
-- :outbox_tray: **FTP account management**
-- 📧 **Email management** (optional)
-- :whale: **Docker integration** (optional for service isolation)
-- :closed_lock_with_key: **Let's Encrypt SSL certificates**
-- :jigsaw: **Module/extension system** for customization
-- :arrows_counterclockwise: **REST API** for automation and integration
+- :control_knobs: **Simple, responsive and modern web interface**.
+- 👤 **Customer management** (creation, modification, suspension, etc.)
+- 🧾 **Complete billing system** (quotes, invoices, reminders, etc.)
+- 💳 **Payment gateways** (PayPal, Stripe, etc.)
+- 🛒 **Product and service management** (VPS, Game server, domains...)
+- 📨 **Support ticket system**
+- 📬 **Customizable e-mail notifications**
+- :jigsaw: **System of modules/extensions** for customization
+  :arrows_counterclockwise: **REST API** for integration and automation
+- 🧩 **Integration with Pterodactyl, Proxmox, etc.** _(via modules)_
 
-| ⚠️ LumenOne currently doesn't encrypt user passwords. This will be fixed in Alpha 1.0.0 or Bêta 1.0.0, but for now, just don't leak your "lumenone.db". |
+| ⚠️ LumenOne currently doesn't encrypt user passwords. This will be fixed in Alpha 1.0.0 or Bêta 1.0.0, but for now, just don't leak your "lumencms.db". |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ---
@@ -48,8 +48,8 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/lumenlabss/LumenOne.git
-   cd LumenOne
+   git clone https://github.com/lumenlabss/LumenCMS.git
+   cd LumenCMS
    ```
 
 2. Install dependencies:
@@ -58,53 +58,17 @@
    npm install
    ```
 
-3. Configure the `config/config.json` file:
-
-   ```json
-   {
-     "hostname": "localhost",
-     "port": 3000,
-     "name": "LumenOne",
-     "version": "Pre-Alpha"
-   }
-   ```
-
-4. Start the server:
-
-   ```bash
-   node lumenone.js
-   ```
-
-5. Access the web interface:
+3. Soon
 
    ```
-   http://localhost:3000
-   ```
 
-6. Nginx Config:
-
-   ```
-   server {
-    listen 80;
-    server_name example.com;  # Replace with your domain
-
-    # Redirect all HTTP requests to your Node.js application
-        location / {
-        proxy_pass http://localhost:3000;  # Replace with the port on which your Node.js app is listening
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-   }
    ```
 
 ---
 
 ## :page_facing_up: License
 
-LumenOne is distributed under the **MIT** license. You are free to use, modify, and distribute it.
+LumenCMS is distributed under the **MIT** license. You are free to use, modify, and distribute it.
 
 ---
 
@@ -139,4 +103,4 @@ Join the LumenLabs community to ask questions, report bugs, or propose ideas:
 
 ## :tada: Acknowledgments
 
-Thanks to all contributors and users who support the LumenOne project!
+Thanks to all contributors and users who support the LumenCMS project!
