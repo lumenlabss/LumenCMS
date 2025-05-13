@@ -1,4 +1,4 @@
 node_modules
-data/lumencms.db
+lumencms.db
 package-lock.json
 .vscode
