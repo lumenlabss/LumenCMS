@@ -11,9 +11,11 @@ const expressSession = require("express-session");
 const config = require("./config/config.json");
 const ejs = require("ejs");
 const HomeRouter = require("./src/routes/home.js");
+const applyTheme = require("./src/middlewares/theme");
 
 // Application initialization
 const app = express();
+applyTheme(app);
 
 // Pages
 app.use("/", HomeRouter);

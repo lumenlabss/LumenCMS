@@ -3,5 +3,5 @@
   "hostname": "localhost",
   "port": 3000,
   "version": "Pre-Alpha",
-  "themeName": "default"
+  "theme": "larium"
 }
